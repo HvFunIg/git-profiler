@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './css/main.css';
 import GitHubUser from "./components/GitHubUser";
+import SearchForm from "./components/SearchForm";
 
 function App() {
+    const [login,setLogin] = useState("hvfunig")
+
   return (
     <div className="main">
-        <GitHubUser login="hvfunig"/>
+
+        <SearchForm value={login} onSearch={setLogin}/>
+        <GitHubUser login={login}/>
     </div>
   );
 }
