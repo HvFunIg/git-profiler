@@ -13,8 +13,7 @@ function UserRepositories({
         <Fetch uri={`https://api.github.com/users/${login}/repos`}
                renderSuccess={({data}) =>(
                    <RepoMenu repositories={data}
-                             onSelect={onSelect}
-                             selectedRepo = {selectedRepo}
+                             login={login}
                    />
                )
                }

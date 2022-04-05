@@ -2,23 +2,22 @@ import React, {useEffect} from "react";
 import Fetch from "./Fetch";
 import UserDetails from "./UserDetails";
 import {useIterator} from "../js/useIterator";
+import RepositoryReadme from "./loadReadme";
 
 
-function RepoMenu({repositories, onSelect = f=>f}) {
+function RepoMenu({repositories, login}) {
     const [{name},previous,next] = useIterator(repositories);
-    useEffect(()=>{
-        if (!name) return;
-        onSelect(name);
-    },[name])
     // &lt; = "<" and &gt; = ">"
     return (
         <>
-            <p>Here is a list of repositories</p>
             <div className="repo-menu">
+                <p>Here is a list of repositories: </p>
+
                 <button onClick={previous}>&lt;</button>
                 <p>{name}</p>
                 <button onClick={next}>&gt;</button>
             </div>
+            <RepositoryReadme login={login} repo={name} />
         </>
     )
 }
