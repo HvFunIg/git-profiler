@@ -1,4 +1,5 @@
-// Custom hook. It invokes every time the value for uri changes
+/** Custom hook. It invokes every time the value for uri changes
+ It is used for fetching requests */
 
 import {useEffect, useState} from "react";
 

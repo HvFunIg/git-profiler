@@ -40,3 +40,6 @@ input{
 }
 .form-search{
 }
+.repo-menu{
+    display: flex;
+}
